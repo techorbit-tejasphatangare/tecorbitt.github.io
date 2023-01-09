@@ -6,290 +6,337 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech-Orbit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="icon.jpeg" type="image/icon type">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-#logo1{
-    margin: 20px 20px;
-}
+    #logo1 {
+      margin: 20px 20px;
+    }
+
+    body{
+      font-family: font-family: 'Ubuntu', sans-serif;;
+    }
 
 
-#logo1 img{
-    height: 50px;
-    margin: 3px 6px;
-}
+    #logo1 img {
+      height: 50px;
+      margin: 3px 6px;
+    }
 
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-}
-.wrapper{
-  background: #171c24;
-  position: fixed;
-  width: 100%;
-}
-.wrapper nav{
-  position: relative;
-  display: flex;
-  max-width: calc(100% - 200px);
-  margin: 0 auto;
-  height: 70px;
-  align-items: center;
-  justify-content: space-between;
-}
-nav .content{
-  display: flex;
-  align-items: center;
-}
-nav .content .links{
-  margin-left: 80px;
-  display: flex;
-}
-.content .logo a{
-  color: #fff;
-  font-size: 30px;
-  font-weight: 600;
-}
-.content .links li{
-  list-style: none;
-  line-height: 70px;
-}
-.content .links li a,
-.content .links li label{
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 9px 17px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-.content .links li label{
-  display: none;
-}
-.content .links li a:hover,
-.content .links li label:hover{
-  background: #323c4e;
-}
-.wrapper .search-icon,
-.wrapper .menu-icon{
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-  line-height: 70px;
-  width: 70px;
-  text-align: center;
-}
-.wrapper .menu-icon{
-  display: none;
-}
-.wrapper #show-search:checked ~ .search-icon i::before{
-  content: "\f00d";
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
 
-.wrapper .search-box{
-  position: absolute;
-  height: 100%;
-  max-width: calc(100% - 50px);
-  width: 100%;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-.wrapper #show-search:checked ~ .search-box{
-  opacity: 1;
-  pointer-events: auto;
-}
-.search-box input{
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  font-size: 17px;
-  color: #fff;
-  background: #171c24;
-  padding: 0 100px 0 15px;
-}
-.search-box input::placeholder{
-  color: #f2f2f2;
-}
-.search-box .go-icon{
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  line-height: 60px;
-  width: 70px;
-  background: #171c24;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-}
-.wrapper input[type="checkbox"]{
-  display: none;
-}
+    .wrapper {
+      background: #171c24;
+      position: fixed;
+      width: 100%;
+    }
 
-/* Dropdown Menu code start */
-.content .links ul{
-  position: absolute;
-  background: #171c24;
-  top: 80px;
-  z-index: -1;
-  opacity: 0;
-  visibility: hidden;
-}
-.content .links li:hover > ul{
-  top: 70px;
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.3s ease;
-}
-.content .links ul li a{
-  display: block;
-  width: 100%;
-  line-height: 30px;
-  border-radius: 0px!important;
-}
-.content .links ul ul{
-  position: absolute;
-  top: 0;
-  right: calc(-100% + 8px);
-}
-.content .links ul li{
-  position: relative;
-}
-.content .links ul li:hover ul{
-  top: 0;
-}
+    .wrapper nav {
+      position: relative;
+      display: flex;
+      max-width: calc(100% - 200px);
+      margin: 0 auto;
+      height: 70px;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-/* Responsive code start */
-@media screen and (max-width: 1250px){
-  .wrapper nav{
-    max-width: 100%;
-    padding: 0 20px;
-  }
-  nav .content .links{
-    margin-left: 30px;
-  }
-  .content .links li a{
-    padding: 8px 13px;
-  }
-  .wrapper .search-box{
-    max-width: calc(100% - 100px);
-  }
-  .wrapper .search-box input{
-    padding: 0 100px 0 15px;
-  }
-}
+    nav .content {
+      display: flex;
+      align-items: center;
+    }
 
-@media screen and (max-width: 900px){
-  .wrapper .menu-icon{
-    display: block;
-  }
-  .wrapper #show-menu:checked ~ .menu-icon i::before{
-    content: "\f00d";
-  }
-  nav .content .links{
-    display: block;
-    position: fixed;
-    background: #14181f;
-    height: 100%;
-    width: 100%;
-    top: 70px;
-    left: -100%;
-    margin-left: 0;
-    max-width: 350px;
-    overflow-y: auto;
-    padding-bottom: 100px;
-    transition: all 0.3s ease;
-  }
-  nav #show-menu:checked ~ .content .links{
-    left: 0%;
-  }
-  .content .links li{
-    margin: 15px 20px;
-  }
-  .content .links li a,
-  .content .links li label{
-    line-height: 40px;
-    font-size: 20px;
-    display: block;
-    padding: 8px 18px;
-    cursor: pointer;
-  }
-  .content .links li a.desktop-link{
-    display: none;
-  }
+    nav .content .links {
+      margin-left: 80px;
+      display: flex;
+    }
 
-  /* dropdown responsive code start */
-  .content .links ul,
-  .content .links ul ul{
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    background: none;
-    max-height: 0px;
-    overflow: hidden;
-  }
-  .content .links #show-features:checked ~ ul,
-  .content .links #show-services:checked ~ ul,
-  .content .links #show-items:checked ~ ul{
-    max-height: 100vh;
-  }
-  .content .links ul li{
-    margin: 7px 20px;
-  }
-  .content .links ul li a{
-    font-size: 18px;
-    line-height: 30px;
-    border-radius: 5px!important;
-  }
-}
+    .content .logo a {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 600;
+    }
 
-@media screen and (max-width: 400px){
-  .wrapper nav{
-    padding: 0 10px;
-  }
-  .content .logo a{
-    font-size: 27px;
-  }
-  .wrapper .search-box{
-    max-width: calc(100% - 70px);
-  }
-  .wrapper .search-box .go-icon{
-    width: 30px;
-    right: 0;
-  }
-  .wrapper .search-box input{
-    padding-right: 30px;
-  }
-}
+    .content .links li {
+      list-style: none;
+      line-height: 70px;
+    }
 
-.dummy-text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  z-index: -1;
-  padding: 0 20px;
-  text-align: center;
-  transform: translate(-50%, -50%);
-}
-.dummy-text h2{
-  font-size: 45px;
-  margin: 5px 0;
-}
+    .content .links li a,
+    .content .links li label {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 9px 17px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .content .links li label {
+      display: none;
+    }
+
+    .content .links li a:hover,
+    .content .links li label:hover {
+      background: #323c4e;
+    }
+
+    .wrapper .search-icon,
+    .wrapper .menu-icon {
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      line-height: 70px;
+      width: 70px;
+      text-align: center;
+    }
+
+    .wrapper .menu-icon {
+      display: none;
+    }
+
+    .wrapper #show-search:checked~.search-icon i::before {
+      content: "\f00d";
+    }
+
+    .wrapper .search-box {
+      position: absolute;
+      height: 100%;
+      max-width: calc(100% - 50px);
+      width: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .wrapper #show-search:checked~.search-box {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .search-box input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      font-size: 17px;
+      color: #fff;
+      background: #171c24;
+      padding: 0 100px 0 15px;
+    }
+
+    .search-box input::placeholder {
+      color: #f2f2f2;
+    }
+
+    .search-box .go-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      line-height: 60px;
+      width: 70px;
+      background: #171c24;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .wrapper input[type="checkbox"] {
+      display: none;
+    }
+
+    /* Dropdown Menu code start */
+    .content .links ul {
+      position: absolute;
+      background: #171c24;
+      top: 80px;
+      z-index: -1;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .content .links li:hover>ul {
+      top: 70px;
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.3s ease;
+    }
+
+    .content .links ul li a {
+      display: block;
+      width: 100%;
+      line-height: 30px;
+      border-radius: 0px !important;
+    }
+
+    .content .links ul ul {
+      position: absolute;
+      top: 0;
+      right: calc(-100% + 8px);
+    }
+
+    .content .links ul li {
+      position: relative;
+    }
+
+    .content .links ul li:hover ul {
+      top: 0;
+    }
+
+    /* Responsive code start */
+    @media screen and (max-width: 1250px) {
+      .wrapper nav {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+
+      nav .content .links {
+        margin-left: 30px;
+      }
+
+      .content .links li a {
+        padding: 8px 13px;
+      }
+
+      .wrapper .search-box {
+        max-width: calc(100% - 100px);
+      }
+
+      .wrapper .search-box input {
+        padding: 0 100px 0 15px;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .wrapper .menu-icon {
+        display: block;
+      }
+
+      .wrapper #show-menu:checked~.menu-icon i::before {
+        content: "\f00d";
+      }
+
+      nav .content .links {
+        display: block;
+        position: fixed;
+        background: #14181f;
+        height: 100%;
+        width: 100%;
+        top: 70px;
+        left: -100%;
+        margin-left: 0;
+        max-width: 350px;
+        overflow-y: auto;
+        padding-bottom: 100px;
+        transition: all 0.3s ease;
+      }
+
+      nav #show-menu:checked~.content .links {
+        left: 0%;
+      }
+
+      .content .links li {
+        margin: 15px 20px;
+      }
+
+      .content .links li a,
+      .content .links li label {
+        line-height: 40px;
+        font-size: 20px;
+        display: block;
+        padding: 8px 18px;
+        cursor: pointer;
+      }
+
+      .content .links li a.desktop-link {
+        display: none;
+      }
+
+      /* dropdown responsive code start */
+      .content .links ul,
+      .content .links ul ul {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        background: none;
+        max-height: 0px;
+        overflow: hidden;
+      }
+
+      .content .links #show-features:checked~ul,
+      .content .links #show-services:checked~ul,
+      .content .links #show-items:checked~ul {
+        max-height: 100vh;
+      }
+
+      .content .links ul li {
+        margin: 7px 20px;
+      }
+
+      .content .links ul li a {
+        font-size: 18px;
+        line-height: 30px;
+        border-radius: 5px !important;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .wrapper nav {
+        padding: 0 10px;
+      }
+
+      .content .logo a {
+        font-size: 27px;
+      }
+
+      .wrapper .search-box {
+        max-width: calc(100% - 70px);
+      }
+
+      .wrapper .search-box .go-icon {
+        width: 30px;
+        right: 0;
+      }
+
+      .wrapper .search-box input {
+        padding-right: 30px;
+      }
+    }
+
+    .dummy-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      z-index: -1;
+      padding: 0 20px;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
+
+    .dummy-text h2 {
+      font-size: 45px;
+      margin: 5px 0;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="wrapper">
@@ -299,9 +346,9 @@ nav .content .links{
       <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
       <div class="content">
         <div id="logo1">
-            <img src="to image.jpeg" alt="LOGO">
+          <img src="to image.jpeg" alt="LOGO">
         </div>
-      <div class="logo"><a href="#">Tech Orbit</a></div>
+        <div class="logo"><a href="#">Tech Orbit</a></div>
         <ul class="links">
           <li><a href="#">Home</a></li>
           <li><a href="aboutus.html" target="_blank">About</a></li>
@@ -321,16 +368,21 @@ nav .content .links{
             <input type="checkbox" id="show-services">
             <label for="show-services">Services</label>
             <ul>
-              <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9aiXlHcLx-mDH1Qul38wD3aR" target="_blank">C Playlist</a></li>
-              <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9ahIappRPN0MCAgtOu3lQjQi" target="_blank">DSA Playlist</a></li>
-              <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q" target="_blank">Java Playlist</a></li>
+              <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9aiXlHcLx-mDH1Qul38wD3aR" target="_blank">C
+                  Playlist</a></li>
+              <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9ahIappRPN0MCAgtOu3lQjQi" target="_blank">DSA
+                  Playlist</a></li>
+              <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q" target="_blank">Java
+                  Playlist</a></li>
               <li>
                 <a href="" class="desktop-link">Framework</a>
                 <input type="checkbox" id="show-items">
                 <label for="show-items">More Items</label>
                 <ul>
-                  <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9ahwFDuExCpPFHAK829Wto2O" target="_blank"> Tailwind</a></li>
-                  <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt" target="_blank">React</a></li>
+                  <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9ahwFDuExCpPFHAK829Wto2O" target="_blank">
+                      Tailwind</a></li>
+                  <li><a href="https://youtube.com/playlist?list=PLu0W_9lII9agx66oZnT6IyhcMIbUMNMdt"
+                      target="_blank">React</a></li>
                   <li><a href="https://youtu.be/BLl32FvcdVM" target="_blank">Node js</a></li>
                 </ul>
               </li>
@@ -349,7 +401,7 @@ nav .content .links{
 
 
 
- 
+
   <section class="text-gray-600 body-font">
     <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
@@ -361,14 +413,20 @@ nav .content .links{
 
           <br class="hidden lg:inline-block">Tech-Orbit Academy..!
         </h1>
-        <p class="mb-8 leading-relaxed">Our Tech-Orbit Academy Are Engaged In Partnering With Our Customers For Creating a Sustainable Solution For Students.</p>
+        <p class="mb-8 leading-relaxed">Our Tech-Orbit Academy Are Engaged In Partnering With Our Customers For Creating
+          a Sustainable Solution For Students.</p>
 
 
         <div class="flex justify-center">
-          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="registration from.html" target="_blank">Join Now</a></button>
+          <button
+            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a
+              href="registration from.html" target="_blank">Join Now</a></button>
 
 
-          <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><a href="https://en.wikipedia.org/wiki/Information_technology_in_India" target="_blank">Read More</a></button>
+          <button
+            class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"><a
+              href="https://en.wikipedia.org/wiki/Information_technology_in_India" target="_blank">Read
+              More</a></button>
         </div>
       </div>
     </div>
@@ -378,7 +436,9 @@ nav .content .links{
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-col text-center w-full mb-20">
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
-        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">We believe it is a Good Mssion Statement for Our Team to  Focus on Providing our Students With a Great Experience. We Recognize that as part of a students-centric Academy, the first step to achieving the Academy’s mission is to provide value to our students.
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-justify">We believe it is a Good Mssion Statement for Our Team to
+          Focus on Providing our Students With a Great Experience. We Recognize that as part of a students-centric
+          Academy, the first step to achieving the Academy’s mission is to provide value to our students.
         </p>
       </div>
       <div class="flex flex-wrap -m-2">
@@ -387,7 +447,8 @@ nav .content .links{
             <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
               src="TEJAS.png">
             <div class="flex-grow">
-              <h2 class="text-gray-900 title-font font-medium"><a href="https://www.instagram.com/__tejas_phatangare__/" target="_blank">Tejas Phatangare</a></h2>
+              <h2 class="text-gray-900 title-font font-medium"><a href="https://www.instagram.com/__tejas_phatangare__/"
+                  target="_blank">Tejas Phatangare</a></h2>
               <p class="text-gray-500">Founder</p>
             </div>
           </div>
@@ -404,7 +465,8 @@ nav .content .links{
         </div>
         <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
           <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
-            <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="SAIF.jpg">
+            <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+              src="SAIF.jpg">
             <div class="flex-grow">
               <h2 class="text-gray-900 title-font font-medium"><a href="#">Saif Ali</a></h2>
               <p class="text-gray-500">CO-Founder</p>
@@ -456,7 +518,8 @@ nav .content .links{
             <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
               src="tejal.jpg">
             <div class="flex-grow">
-              <h2 class="text-gray-900 title-font font-medium"><a href="https://www.instagram.com/urvashirautela/" target="_blank">Tejal Patil</a></h2>
+              <h2 class="text-gray-900 title-font font-medium"><a href="https://www.instagram.com/urvashirautela/"
+                  target="_blank">Tejal Patil</a></h2>
               <p class="text-gray-500">System Engineer</p>
             </div>
           </div>
@@ -466,7 +529,8 @@ nav .content .links{
             <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
               src="POOJA.jpg">
             <div class="flex-grow">
-              <h2 class="text-gray-900 title-font font-medium"><a href="https://www.instagram.com/sunnyleone/" target="_blank">Pooja Patil</a></h2>
+              <h2 class="text-gray-900 title-font font-medium"><a href="https://www.instagram.com/sunnyleone/"
+                  target="_blank">Pooja Patil</a></h2>
               <p class="text-gray-500">Product Manager</p>
             </div>
           </div>
@@ -481,44 +545,48 @@ nav .content .links{
           <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Services</h1>
           <div class="h-1 w-20 bg-indigo-500 rounded"></div>
         </div>
-        <p class="lg:w-1/2 w-full leading-relaxed text-gray-400 text-opacity-90">We Are Providing A Best Services like Web Development ,Python , Java , RedHat , C++ , C , Etc & Much More...!</p>
+        <p class="lg:w-1/2 w-full leading-relaxed text-gray-400 text-opacity-90">We Are Providing A Best Services like
+          Web Development ,Python , Java , RedHat , C++ , C , Etc & Much More...!</p>
       </div>
       <div class="flex flex-wrap -m-4">
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6" src="5.jpeg"
-              alt="content">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="5.jpeg" alt="content">
             <h3 class="tracking-widest text-indigo-400 text-xs font-medium title-font">Programming</h3>
-            <h2 class="text-lg text-white font-medium title-font mb-4"><a href="https://www.javatpoint.com/c-programming-language-tutorial" target="_blank">C Programming</a></h2>
-            <p class="leading-relaxed text-base">C is a powerful general-purpose programming language. It can be used to develop software like operating systems, databases, compilers, and so on.</p>
+            <h2 class="text-lg text-white font-medium title-font mb-4 "><a
+                href="https://www.javatpoint.com/c-programming-language-tutorial" target="_blank">C Programming</a></h2>
+            <p class="leading-relaxed text-base text-justify">C is a powerful general-purpose programming language. It can be used to
+              develop software like operating systems, databases, compilers, and so on.</p>
           </div>
         </div>
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6" src="9.jpeg"
-              alt="content">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="9.jpeg" alt="content">
             <h3 class="tracking-widest text-indigo-400 text-xs font-medium title-font">Programming</h3>
-            <h2 class="text-lg text-white font-medium title-font mb-4"><a href="https://www.javatpoint.com/cpp-program" target="_blank">C ++ Programming</a></h2>
-            <p class="leading-relaxed text-base">C++ is a popular programming language.
-              C++ is used to create computer programs, and is one of the most used language in game development.</p>
+            <h2 class="text-lg text-white font-medium title-font mb-4"><a href="https://www.javatpoint.com/cpp-program"
+                target="_blank">C ++ Programming</a></h2>
+            <p class="leading-relaxed text-base text-justify">C++ is a popular programming language.
+              C++ is used to create computer programs,and is one of the most used language in game development.</p>
           </div>
         </div>
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6" src="8.png"
-              alt="content">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="8.png" alt="content">
             <h3 class="tracking-widest text-indigo-400 text-xs font-medium title-font">Programming</h3>
-            <h2 class="text-lg text-white font-medium title-font mb-4"><a href="https://www.javatpoint.com/java-tutorial" target="_blank">Java Programming</a></h2>
-            <p class="leading-relaxed text-base">Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible..</p>
+            <h2 class="text-lg text-white font-medium title-font mb-4"><a
+                href="https://www.javatpoint.com/java-tutorial" target="_blank">Java Programming</a></h2>
+            <p class="leading-relaxed text-base text-justify">Java is a high-level, class-based, object-oriented programming language
+              that is designed to have as few implementation dependencies as possible..</p>
           </div>
         </div>
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-gray-800 bg-opacity-40 p-6 rounded-lg">
-            <img class="h-40 rounded w-full object-cover object-center mb-6" src="10.jpeg"
-              alt="content">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="10.jpeg" alt="content">
             <h3 class="tracking-widest text-indigo-400 text-xs font-medium title-font">Development</h3>
-            <h2 class="text-lg text-white font-medium title-font mb-4"><a href="https://intellipaat.com/blog/what-is-web-development/" target="_blank">Web development</a></h2>
-            <p class="leading-relaxed text-base">Web development is the work involved in developing a website for the Internet. & simple single static page of plain text to complex web applications.</p>
+            <h2 class="text-lg text-white font-medium title-font mb-4"><a
+                href="https://intellipaat.com/blog/what-is-web-development/" target="_blank">Web development</a></h2>
+            <p class="leading-relaxed text-base text-justify">Web development is the work involved in developing a website for the
+              Internet. & simple single static page of plain text to complex web applications.</p>
           </div>
         </div>
       </div>
@@ -535,9 +603,8 @@ nav .content .links{
 
         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
           <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-              src="17.png"></a>
-            <div class="mt-4">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="17.png"></a>
+          <div class="mt-4">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Programming</h3>
             <h2 class="text-white title-font text-lg font-medium">Javascript</h2>
             <p class="mt-1">$24.00</p>
@@ -547,8 +614,7 @@ nav .content .links{
 
         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
           <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-              src="php.jpeg"></a>
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="php.jpeg"></a>
           <div class="mt-4">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Programming</h3>
             <h2 class="text-white title-font text-lg font-medium">PHP</h2>
@@ -559,7 +625,7 @@ nav .content .links{
 
         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
           <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block"src="7.jpeg"> </a>
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="7.jpeg"> </a>
           <div class="mt-4">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Programming</h3>
             <h2 class="text-white title-font text-lg font-medium">Python</h2>
@@ -568,8 +634,7 @@ nav .content .links{
         </div>
         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
           <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-              src="9.jpeg">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="9.jpeg">
           </a>
           <div class="mt-4">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Programming</h3>
@@ -579,8 +644,7 @@ nav .content .links{
         </div>
         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
           <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-              src="8.png">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="8.png">
           </a>
           <div class="mt-4">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Programming</h3>
@@ -590,8 +654,7 @@ nav .content .links{
         </div>
         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
           <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-              src="REACT1.png">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="REACT1.png">
           </a>
           <div class="mt-4">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Programming</h3>
@@ -601,8 +664,7 @@ nav .content .links{
         </div>
         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
           <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-              src="21.jpg">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="21.jpg">
           </a>
           <div class="mt-4">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Programming</h3>
@@ -612,8 +674,7 @@ nav .content .links{
         </div>
         <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
           <a class="block relative h-48 rounded overflow-hidden">
-            <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-              src="22.jpeg">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="22.jpeg">
           </a>
           <div class="mt-4">
             <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">Programming</h3>
@@ -709,8 +770,8 @@ nav .content .links{
             </div>
           </div>
         </div>
-        <img class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12"
-          src="JOIN NOW.png" alt="step">
+        <img class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" src="JOIN NOW.png"
+          alt="step">
       </div>
     </div>
   </section>
@@ -721,8 +782,12 @@ nav .content .links{
       <div class="flex flex-wrap -m-4">
         <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
           <div class="h-full text-center">
-            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="t-3.jpg">
-            <p class="leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum quos, praesentium vitae?</p>
+            <img alt="testimonial"
+              class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+              src="t-3.jpg">
+            <p class="leading-relaxed text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id
+              minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum
+              quos, praesentium vitae?</p>
             <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
             <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Akshay Phatangare</h2>
             <p class="text-gray-500">S/w Engineer-Google</p>
@@ -730,8 +795,12 @@ nav .content .links{
         </div>
         <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
           <div class="h-full text-center">
-            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="t-2.jpg">
-            <p class="leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum quos, praesentium vitae?</p>
+            <img alt="testimonial"
+              class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+              src="t-2.jpg">
+            <p class="leading-relaxed text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id
+              minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum
+              quos, praesentium vitae?</p>
             <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
             <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Viijaylaxmi Sharma</h2>
             <p class="text-gray-500">UI Develeoper</p>
@@ -739,8 +808,12 @@ nav .content .links{
         </div>
         <div class="lg:w-1/3 lg:mb-0 p-4">
           <div class="h-full text-center">
-            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="t-1.jpg">
-            <p class="leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum quos, praesentium vitae?</p>
+            <img alt="testimonial"
+              class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+              src="t-1.jpg">
+            <p class="leading-relaxed text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id
+              minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum
+              quos, praesentium vitae?</p>
             <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
             <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Sunny Leone</h2>
             <p class="text-gray-500">CTO</p>
@@ -755,8 +828,12 @@ nav .content .links{
       <div class="flex flex-wrap -m-4">
         <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
           <div class="h-full text-center">
-            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="t-4.jpg">
-            <p class="leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum quos, praesentium vitae?</p>
+            <img alt="testimonial"
+              class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+              src="t-4.jpg">
+            <p class="leading-relaxed text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id
+              minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum
+              quos, praesentium vitae?</p>
             <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
             <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Nisha Patil</h2>
             <p class="text-gray-500">Google</p>
@@ -764,8 +841,12 @@ nav .content .links{
         </div>
         <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
           <div class="h-full text-center">
-            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="t-6.jpg">
-            <p class="leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum quos, praesentium vitae?</p>
+            <img alt="testimonial"
+              class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+              src="t-6.jpg">
+            <p class="leading-relaxed text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id
+              minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum
+              quos, praesentium vitae?</p>
             <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
             <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Jonny Sins</h2>
             <p class="text-gray-500">S## Developer</p>
@@ -773,8 +854,12 @@ nav .content .links{
         </div>
         <div class="lg:w-1/3 lg:mb-0 p-4">
           <div class="h-full text-center">
-            <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="t-5.jpg">
-            <p class="leading-relaxed">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum quos, praesentium vitae?</p>
+            <img alt="testimonial"
+              class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+              src="t-5.jpg">
+            <p class="leading-relaxed  text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusamus iusto id
+              minus eaque? Nostrum, ad sed. Repellendus sit atque ducimus molestias iste quibusdam, mollitia magni cum
+              quos, praesentium vitae?</p>
             <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
             <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">Sai Gunjal</h2>
             <p class="text-gray-500">Web Developer-Flipkart</p>
@@ -819,31 +904,35 @@ nav .content .links{
           <div class="p-2 w-1/2">
             <div class="relative">
               <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-              <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              <input type="text" id="name" name="name"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
           </div>
           <div class="p-2 w-1/2">
             <div class="relative">
               <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-              <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out required">
+              <input type="email" id="email" name="email"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out required">
             </div>
           </div>
           <div class="p-2 w-full">
             <div class="relative">
               <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-              <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+              <textarea id="message" name="message"
+                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
             </div>
           </div>
           <div class="p-2 w-full">
-            <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+            <button
+              class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- FOOTER CODING START HERE -->
+  <!-- FOOTER CODING START HERE -->
 
   <footer class="text-gray-400 bg-gray-900 body-font">
     <div class="container px-5 py-24 mx-auto">
@@ -929,7 +1018,8 @@ nav .content .links{
               <a class="text-gray-400 hover:text-white">MACHINE LEARNING</a>
             </li>
             <li>
-              <a class="text-gray-400 hover:text-white" href="https://www.coursera.org/articles/what-is-data-science" target="_blank">DATA SCIENCE</a>
+              <a class="text-gray-400 hover:text-white" href="https://www.coursera.org/articles/what-is-data-science"
+                target="_blank">DATA SCIENCE</a>
             </li>
           </nav>
         </div>
@@ -958,24 +1048,26 @@ nav .content .links{
           <div class="relative sm:w-64 w-40 sm:mr-4 mr-2">
             <label for="footer-field" class="leading-7 text-sm text-gray-400">Search Here</label>
             <input type="text" id="footer-field" name="footer-field"
-            class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
           </div>
           <button
-          class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Search On This Site</button>
+            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Search
+            On This Site</button>
           <p class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 text-center sm:text-left">Follow Our Social Handles...!
-            
+
             <br class="lg:block hidden">
           </p>
         </div>
         <span class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
-          <a class="text-gray-400" href="https://www.facebook.com/people/Tejas-Phatangare/100047234412799/" target="_blank">
+          <a class="text-gray-400" href="https://www.facebook.com/people/Tejas-Phatangare/100047234412799/"
+            target="_blank">
             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
-            viewBox="0 0 24 24">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-          </svg>
-        </a>
+              viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
 
-         
+
           <a class="ml-3 text-gray-400" href="" target="_blank">
             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
               viewBox="0 0 24 24">
@@ -991,7 +1083,7 @@ nav .content .links{
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
             </svg>
           </a>
-          <a class="ml-3 text-gray-400" href= "https://www.linkedin.com/in/tejas-phatangare-339897235/" target="_blank">
+          <a class="ml-3 text-gray-400" href="https://www.linkedin.com/in/tejas-phatangare-339897235/" target="_blank">
             <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
               <path stroke="none"
@@ -1009,11 +1101,11 @@ nav .content .links{
           <a href="https://www.instagram.com/__tejas_phatangare__/" class="text-gray-500 ml-1" target="_blank"
             rel="noopener noreferrer">@Tech-Orbit</a>
         </p>
-        <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-400 text-sm">HAVE A GOOD DAY..!</span>
+        <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-400 text-sm">HAVE A
+          GOOD DAY..!</span>
       </div>
     </div>
   </footer>
 </body>
+
 </html>
-
-
